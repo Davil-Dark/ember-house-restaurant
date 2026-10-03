@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>EMBER HOUSE — Restaurant Concept</title>
+<meta name="description" content="EMBER HOUSE is a fictional US restaurant and hospitality concept by Virexa & Hartwell.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#11100e;--cream:#eee8dc;--paper:#d8cbb7;--rust:#9a4d32;--muted:#8e867a;--line:rgba(238,232,220,.2);--sans:"Manrope",sans-serif;--serif:"DM Serif Display",Georgia,serif;--mono:"DM Mono",monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--cream);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}img{display:block;width:100%;object-fit:cover}::selection{background:var(--cream);color:var(--black)}
+.intro{display:none!important;position:fixed;inset:0;z-index:99;background:var(--black);display:grid;place-items:center;animation:out 1s 1.15s forwards;pointer-events:none}.intro b{font:clamp(50px,9vw,130px) var(--serif);font-weight:400;letter-spacing:-.04em;animation:in .9s cubic-bezier(.16,1,.3,1)}.intro small{position:absolute;bottom:30px;font:8px var(--mono);letter-spacing:.2em;color:#777;text-transform:uppercase}@keyframes in{from{opacity:0;transform:translateY(25px)}to{opacity:1}}@keyframes out{to{opacity:0;visibility:hidden}}
+.notice{height:32px;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line);font:8px var(--mono);letter-spacing:.17em;text-transform:uppercase;white-space:nowrap}.notice-track{display:flex;flex:none;animation:marquee 25s linear infinite}.notice-track span{padding-right:55px}.notice-track span:after{content:"✦";margin-left:55px;color:#8b4a32}@keyframes marquee{to{transform:translateX(-50%)}}
+header{position:absolute;z-index:20;top:32px;left:0;right:0;height:86px;padding:0 34px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}.logo{font-weight:700;font-size:16px;letter-spacing:.24em}.nav{display:flex;gap:32px;font:9px var(--mono);letter-spacing:.12em;text-transform:uppercase}.nav a{position:relative}.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--cream);transition:.35s}.nav a:hover:after{right:0}.head-right{justify-self:end;display:flex;gap:9px}.round{width:43px;height:43px;border:1px solid rgba(238,232,220,.42);border-radius:50%;display:grid;place-items:center;font-size:12px;transition:.3s}.round:hover{background:var(--cream);color:var(--black);transform:rotate(-8deg)}
+.hero{height:100svh;min-height:720px;position:relative;overflow:hidden}.hero img{height:112%;filter:saturate(.72) brightness(.68);transform:scale(1.03);animation:zoom 2.2s cubic-bezier(.16,1,.3,1) forwards}@keyframes zoom{to{transform:scale(1)}}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.52),transparent 32%,rgba(0,0,0,.74))}
+.hero-copy{position:absolute;z-index:3;left:6vw;right:6vw;bottom:7vh}.eyebrow{font:8px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:#bcb4a8}.hero h1{font:clamp(76px,13vw,190px) var(--serif);font-weight:400;line-height:.72;letter-spacing:-.065em;margin:24px 0 35px;max-width:1050px}.hero h1 em{color:#c97955}.hero-sub{display:flex;justify-content:space-between;align-items:end;gap:30px}.hero p{max-width:420px;color:#d0c8bb;font-size:12px;line-height:1.8;margin:0}.actions{display:flex;gap:10px}.btn{padding:16px 19px;border:1px solid rgba(238,232,220,.55);font-size:9px;font-weight:700;display:inline-flex;gap:55px;align-items:center;transition:.3s}.btn.primary{background:var(--cream);color:var(--black);border-color:var(--cream)}.btn:hover{transform:translateY(-4px);gap:68px}.scroll{position:absolute;z-index:4;right:30px;bottom:30px;writing-mode:vertical-rl;font:8px var(--mono);letter-spacing:.18em;display:flex;gap:12px}.scroll:before{content:"";height:62px;width:1px;background:#bbb;animation:pulse 1.8s infinite}@keyframes pulse{0%,100%{transform:scaleY(.3);transform-origin:top}50%{transform:scaleY(1)}}
+.intro-section{background:var(--cream);color:var(--black);padding:145px 7vw 125px;display:grid;grid-template-columns:1fr 1.7fr;gap:9vw}.intro-section h2{font:clamp(54px,7vw,104px) var(--serif);line-height:.82;letter-spacing:-.06em;font-weight:400;margin:0}.intro-section h2 em{color:var(--rust)}.intro-text{max-width:570px;font-size:14px;line-height:1.9;color:#665f55}.intro-text strong{color:#171511}.mini-line{height:1px;background:rgba(17,16,14,.2);margin:35px 0}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.fact b{font:9px var(--mono);letter-spacing:.12em}.fact span{display:block;margin-top:9px;font-size:11px;color:#71695e;line-height:1.6}
+.menu-section{background:#151310;padding:125px 7vw}.section-top{display:flex;justify-content:space-between;align-items:end;border-top:1px solid var(--line);padding-top:20px;margin-bottom:55px}.section-top h2{font:clamp(55px,8vw,110px) var(--serif);line-height:.78;font-weight:400;letter-spacing:-.06em;margin:0}.section-top h2 em{color:#b96545}.section-tag{font:8px var(--mono);letter-spacing:.16em;color:#888078}.dish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.dish{position:relative;overflow:hidden;aspect-ratio:.82;background:#24211d}.dish img{height:110%;transition:1s cubic-bezier(.16,1,.3,1);filter:saturate(.82)}.dish:hover img{transform:scale(1.06)}.dish:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 48%,rgba(0,0,0,.78))}.dish-info{position:absolute;z-index:2;left:18px;right:18px;bottom:18px}.dish-no{font:8px var(--mono);color:#c1b7a9}.dish-name{font:25px var(--serif);margin-top:6px}.dish-desc{font-size:10px;color:#bdb4a8;margin-top:6px}
+.experience{background:var(--paper);color:var(--black);padding:140px 4vw}.exp-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:25px;align-items:stretch}.exp-image{min-height:700px;overflow:hidden}.exp-image img{height:100%;transition:1.2s}.exp-image:hover img{transform:scale(1.025)}.exp-copy{padding:35px 4vw;display:flex;flex-direction:column;justify-content:center}.exp-copy h2{font:clamp(58px,7vw,105px) var(--serif);line-height:.78;letter-spacing:-.06em;font-weight:400;margin:18px 0 30px}.exp-copy h2 em{color:var(--rust)}.exp-copy p{font-size:13px;line-height:1.9;color:#665e53;max-width:460px}.exp-list{border-top:1px solid rgba(17,16,14,.2);margin-top:45px}.exp-item{display:grid;grid-template-columns:45px 1fr auto;gap:20px;padding:18px 0;border-bottom:1px solid rgba(17,16,14,.2);font-size:11px}.exp-item span:first-child{font:8px var(--mono);color:#81786d}.exp-item span:last-child{font:8px var(--mono)}
+.reserve{position:relative;min-height:680px;display:grid;place-items:center;text-align:center;overflow:hidden}.reserve-bg{position:absolute;inset:0}.reserve-bg img{height:100%;filter:brightness(.45) saturate(.7)}.reserve:after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent,rgba(0,0,0,.7))}.reserve-content{position:relative;z-index:2;max-width:800px;padding:40px}.reserve h2{font:clamp(62px,9vw,125px) var(--serif);font-weight:400;line-height:.78;letter-spacing:-.065em;margin:20px 0}.reserve h2 em{color:#c97955}.reserve p{font-size:12px;line-height:1.8;color:#d0c8bb;max-width:470px;margin:auto}.reserve .btn{margin-top:30px}
+.journal{background:var(--cream);color:var(--black);padding:125px 7vw}.journal .section-top{border-color:rgba(17,16,14,.2)}.journal-row{display:grid;grid-template-columns:70px 1.2fr 1fr 50px;gap:25px;padding:23px 0;border-bottom:1px solid rgba(17,16,14,.2);align-items:center;transition:.35s}.journal-row:first-child{border-top:1px solid rgba(17,16,14,.2)}.journal-row:hover{padding-left:14px}.journal-no,.journal-type{font:8px var(--mono);color:#7d756a}.journal-title{font:22px var(--serif)}.journal-desc{font-size:10px;color:#756d62;line-height:1.6}.journal-arrow{font-size:18px;justify-self:end}
+.final{background:var(--rust);min-height:580px;display:grid;place-items:center;text-align:center;padding:70px 25px}.final h2{font:clamp(60px,9vw,125px) var(--serif);font-weight:400;line-height:.78;letter-spacing:-.065em;margin:20px 0;color:#f4ede2}.final h2 em{color:#1a1713}.final p{max-width:500px;margin:auto;font-size:12px;line-height:1.8;color:#e1c7b7}.final .btn{margin-top:28px;background:#171512;color:#eee8dc;border-color:#171512}
+footer{background:#11100e;padding:70px 7vw 25px}.foot-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px;padding-bottom:65px}.foot-logo{font-weight:700;letter-spacing:.22em;font-size:25px}.foot-note{font:8px var(--mono);line-height:1.8;color:#6e6860;max-width:260px;margin-top:22px}.foot-grid h4{font:8px var(--mono);letter-spacing:.16em;margin:0 0 18px}.foot-grid a{font-size:10px;color:#858078;display:block;margin:10px 0;transition:.25s}.foot-grid a:hover{color:#eee;transform:translateX(4px)}.foot-bottom{border-top:1px solid var(--line);padding-top:18px;color:#5f5a53;font:7px var(--mono);letter-spacing:.1em;display:flex;justify-content:space-between}
+.reveal{opacity:0;transform:translateY(38px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:none}
+/* PREMIUM RESTAURANT ENTRY — isolated full-screen entrance */
+body:not(.entered){overflow:hidden}
+body:not(.entered)>.notice,body:not(.entered)>header,body:not(.entered)>main,body:not(.entered)>footer{visibility:hidden}
+.entry{position:fixed!important;inset:0!important;width:100vw;height:100svh;z-index:99999!important;display:flex!important;align-items:center;justify-content:center;overflow:hidden;background:#090806;perspective:1800px;opacity:1;visibility:visible;pointer-events:auto;transition:opacity .9s ease,visibility 0s linear 2.45s}
+.entry-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 52%,rgba(210,125,78,.16),transparent 30%),linear-gradient(rgba(7,6,5,.72),rgba(7,6,5,.7)),url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=88");background-size:cover;background-position:center;filter:saturate(.6) brightness(.55);transform:scale(1.03);transition:transform 2.6s cubic-bezier(.16,1,.3,1),filter 2.2s ease}
+.entry-vignette{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.55),transparent 24%,transparent 76%,rgba(0,0,0,.55)),linear-gradient(180deg,rgba(0,0,0,.48),transparent 28%,rgba(0,0,0,.62));pointer-events:none}
+.entry-scene{position:relative;width:min(650px,82vw);height:min(690px,78vh);min-height:470px;transform-style:preserve-3d;filter:drop-shadow(0 28px 55px rgba(0,0,0,.62))}
+.entry-arch{position:absolute;inset:-25px -22px -18px;border:2px solid rgba(193,161,119,.58);background:linear-gradient(90deg,rgba(38,25,17,.65),rgba(12,9,7,.15),rgba(38,25,17,.65));box-shadow:inset 0 0 0 9px rgba(12,8,6,.78),inset 0 0 55px rgba(0,0,0,.7),0 0 0 1px rgba(255,225,181,.1);pointer-events:none}
+.entry-sign{position:absolute;top:-92px;left:50%;transform:translateX(-50%);white-space:nowrap;text-align:center;color:#e8dac7;text-shadow:0 3px 14px #000;z-index:30}
+.entry-sign small{display:block;font:8px var(--mono);letter-spacing:.25em;margin-bottom:10px;color:#aa9a87}.entry-sign strong{font:italic 38px var(--serif);letter-spacing:-.04em;font-weight:400}
+.entry-inside{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 58%,rgba(231,144,91,.4),rgba(92,39,22,.22) 28%,rgba(8,6,5,.9) 68%),url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1600&q=88");background-size:cover;background-position:center;filter:brightness(.72) saturate(.72);transform:scale(1.08);box-shadow:inset 0 0 120px rgba(0,0,0,.9)}
+.door{position:absolute;top:0;bottom:0;width:50%;z-index:10;background:linear-gradient(100deg,#1b100b 0%,#3a2115 43%,#21130d 100%);border:1px solid rgba(214,181,138,.42);transform-style:preserve-3d;backface-visibility:hidden;will-change:transform;box-shadow:inset 0 0 75px rgba(0,0,0,.58),inset 0 0 0 7px rgba(12,8,5,.52);transition:transform 1.95s cubic-bezier(.65,0,.18,1)}
+.door:before{content:"";position:absolute;inset:24px;border:1px solid rgba(218,188,147,.25);box-shadow:inset 0 0 0 2px rgba(0,0,0,.25),inset 0 0 42px rgba(0,0,0,.32)}
+.door:after{content:"";position:absolute;inset:62px 45px;border:1px solid rgba(218,188,147,.18);box-shadow:inset 0 0 30px rgba(0,0,0,.3)}
+.door-left{left:0;transform-origin:left center}.door-right{right:0;transform-origin:right center;background:linear-gradient(80deg,#21130d 0%,#3a2115 57%,#1b100b 100%)}
+.door-handle{position:absolute;top:50%;width:7px;height:112px;border-radius:5px;background:linear-gradient(90deg,#66451f,#e1b66f 48%,#72502a);box-shadow:0 3px 14px rgba(0,0,0,.65);transform:translateY(-50%);z-index:12}.door-left .door-handle{right:27px}.door-right .door-handle{left:27px}.door-handle:after{content:"";position:absolute;inset:-4px;border:1px solid rgba(245,215,165,.2);border-radius:7px}
+.entry-copy{position:absolute;z-index:25;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none;transition:opacity .55s ease,transform .7s ease}.entry-title{font:italic clamp(55px,8.5vw,98px) var(--serif);line-height:.8;letter-spacing:-.055em;color:#d88962;text-shadow:0 8px 30px rgba(0,0,0,.62)}.entry-sub{margin:24px 0 0;color:#e8ddd1;font-size:12px;text-shadow:0 2px 10px #000}.enter-btn{margin-top:30px;pointer-events:auto;appearance:none;border:1px solid rgba(232,215,190,.72);background:rgba(12,9,7,.76);color:#f2e8db;padding:18px 32px;min-width:245px;font:9px var(--mono);letter-spacing:.18em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 14px 35px rgba(0,0,0,.4);transition:background .3s ease,color .3s ease,transform .3s ease,border-color .3s ease}.enter-btn:hover{background:#eee8dc;color:#11100e;border-color:#eee8dc;transform:translateY(-2px)}
+.entry.open .entry-bg{transform:scale(1.12);filter:saturate(.74) brightness(.82)}.entry.open .entry-inside{animation:insideReveal 2.05s cubic-bezier(.16,1,.3,1) forwards}.entry.open .door-left{transform:rotateY(-92deg)}.entry.open .door-right{transform:rotateY(92deg)}.entry.open .entry-copy{opacity:0;transform:scale(.98) translateY(-10px)}.entry.open{opacity:0;pointer-events:none}
+@keyframes insideReveal{0%{filter:brightness(.48) saturate(.62);transform:scale(1.1)}55%{filter:brightness(.7) saturate(.7);transform:scale(1.05)}100%{filter:brightness(.9) saturate(.78);transform:scale(1)}}
+@media(max-width:760px){.entry-scene{width:76vw;height:67vh;min-height:430px}.entry-arch{inset:-13px -10px -10px;border-width:1px;box-shadow:inset 0 0 0 6px rgba(12,8,6,.78),inset 0 0 40px rgba(0,0,0,.7)}.entry-sign{top:-66px}.entry-sign small{font-size:6px;letter-spacing:.17em;margin-bottom:7px}.entry-sign strong{font-size:25px}.door:before{inset:17px}.door:after{inset:38px 26px}.door-handle{height:88px;width:6px}.door-left .door-handle{right:17px}.door-right .door-handle{left:17px}.entry-title{font-size:clamp(43px,11vw,65px)}.entry-sub{font-size:10px;margin-top:19px}.enter-btn{min-width:215px;padding:16px 18px;margin-top:24px}}
+
+/* MOBILE WIDTH FIX — keep the full site locked to the device viewport */
+@media (max-width:760px){
+  html,body{width:100%;max-width:100%;min-width:0;margin:0;padding:0;overflow-x:hidden}
+  body> .notice, body> header, body> main, body> footer{width:100%;max-width:100%;min-width:0}
+  main{width:100%;max-width:100%;min-width:0}
+  .hero,.intro-section,.menu-section,.experience,.reserve,.journal,.final,footer{width:100%;max-width:100%;min-width:0}
+  .hero{height:100svh;min-height:680px}
+  header{padding:0 22px;grid-template-columns:auto 1fr auto;min-width:0}
+  .nav{gap:18px;justify-self:center}
+  .nav a:nth-child(3){display:none}
+  .head-right{gap:6px}
+  .round{width:38px;height:38px}
+  .hero-copy{left:34px;right:34px;bottom:7vh}
+  .hero h1{font-size:clamp(58px,16vw,92px);max-width:100%;margin:20px 0 28px}
+  .hero-sub{display:block}
+  .hero p{max-width:270px;font-size:11px}
+  .actions{margin-top:22px;display:flex;flex-wrap:wrap}
+  .btn{max-width:100%}
+  .scroll{right:18px;bottom:25px}
+  .intro-section{padding:90px 40px 90px;grid-template-columns:1fr;gap:55px}
+  .intro-section h2{font-size:clamp(52px,14vw,78px)}
+  .intro-text{max-width:none}
+  .facts{grid-template-columns:1fr 1fr;gap:26px}
+  .fact:last-child{grid-column:1/-1}
+  .menu-section{padding:90px 40px}
+  .section-top{display:block;margin-bottom:35px}
+  .section-tag{margin-top:18px}
+  .dish-grid{grid-template-columns:1fr;gap:18px}
+  .dish{aspect-ratio:.88}
+  .experience{padding:90px 40px}
+  .exp-grid{grid-template-columns:1fr;gap:0}
+  .exp-image{min-height:420px}
+  .exp-copy{padding:55px 0 0}
+  .reserve{min-height:620px}
+  .reserve-content{padding:35px 40px}
+  .journal{padding:90px 40px}
+  .journal-row{grid-template-columns:35px 1fr 25px;gap:14px}
+  .journal-desc{grid-column:2/-1}
+  .final{min-height:540px;padding:70px 30px}
+  footer{padding:60px 40px 25px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:35px}
+  .foot-grid>div:first-child{grid-column:1/-1}
+  .foot-bottom{display:block;line-height:1.8}
+}
+</style>
+</head>
+<body>
+<div class="entry" id="entry" aria-label="Enter EMBER HOUSE">
+  <div class="entry-bg"></div>
+  <div class="entry-vignette"></div>
+  <div class="entry-scene">
+    <div class="entry-arch"></div>
+    <div class="entry-sign"><small>A DINING HOUSE</small><strong>EMBER HOUSE</strong></div>
+    <div class="entry-inside"></div>
+    <div class="door door-left"><span class="door-handle"></span></div>
+    <div class="door door-right"><span class="door-handle"></span></div>
+    <div class="entry-copy">
+      <div class="entry-title">EMBER<br>HOUSE</div>
+      <p class="entry-sub">A night of fire, food &amp; good company.</p>
+      <button class="enter-btn" id="enterHouse" type="button">ENTER RESTAURANT&nbsp;&nbsp;↗</button>
+    </div>
+  </div>
+</div>
+<div class="intro"><b>EMBER HOUSE</b><small>DINING · HOSPITALITY · 2026</small></div>
+<div class="notice"><div class="notice-track"><span>Seasonal menu · New York · Los Angeles · Austin · Reservations recommended</span><span>Seasonal menu · New York · Los Angeles · Austin · Reservations recommended</span><span>Seasonal menu · New York · Los Angeles · Austin · Reservations recommended</span><span>Seasonal menu · New York · Los Angeles · Austin · Reservations recommended</span></div></div>
+
+<header>
+<div class="logo">EMBER HOUSE</div>
+<nav class="nav"><a href="#menu">Menu</a><a href="#experience">The house</a><a href="#journal">Journal</a></nav>
+<div class="head-right"><a class="round" href="#reserve">↘</a><a class="round" href="#reserve">↗</a></div>
+</header>
+
+<main>
+<section class="hero">
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=88" alt="Warm candlelit restaurant interior">
+<div class="hero-copy">
+<div class="eyebrow">Independent dining house / 01 — 2026</div>
+<h1>Come for<br><em>the evening.</em></h1>
+<div class="hero-sub"><p>A modern neighborhood dining house built around fire, seasonal produce, and the simple pleasure of staying a little longer.</p><div class="actions"><a class="btn primary" href="#reserve">Reserve a table <span>↗</span></a><a class="btn" href="#menu">View the menu <span>↘</span></a></div></div>
+</div><div class="scroll">SCROLL TO DISCOVER</div>
+</section>
+
+<section class="intro-section reveal">
+<div><div class="eyebrow" style="color:#746b5f">02 / THE HOUSE</div><h2>A table,<br><em>properly kept.</em></h2></div>
+<div class="intro-text"><p>EMBER HOUSE is a fictional hospitality concept where the room matters as much as what arrives at the table. <strong>Warm light, open flame, seasonal cooking and unhurried service</strong> shape an evening designed to feel intimate without feeling formal.</p><div class="mini-line"></div><div class="facts"><div class="fact"><b>01 / KITCHEN</b><span>Wood fire, seasonal produce, handmade pasta.</span></div><div class="fact"><b>02 / ROOM</b><span>Low light, natural materials, considered details.</span></div><div class="fact"><b>03 / CELLAR</b><span>Old-world bottles and expressive new producers.</span></div></div></div>
+</section>
+
+<section class="menu-section reveal" id="menu">
+<div class="section-top"><div><div class="eyebrow">03 / TONIGHT'S MENU</div><h2>Made over<br><em>the fire.</em></h2></div><div class="section-tag">SEASONAL / A LA CARTE / CHEF'S TABLE</div></div>
+<div class="dish-grid">
+<article class="dish"><img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1100&q=86" alt="Seasonal plated dish"><div class="dish-info"><div class="dish-no">01 / FIRST</div><div class="dish-name">Charred market vegetables</div><div class="dish-desc">Cultured cream · herbs · ember oil</div></div></article>
+<article class="dish"><img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=1100&q=86" alt="Pasta dish"><div class="dish-info"><div class="dish-no">02 / HOUSE</div><div class="dish-name">Hand-cut pasta</div><div class="dish-desc">Brown butter · aged cheese · seasonal truffle</div></div></article>
+<article class="dish"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1100&q=86" alt="Wood fired main course"><div class="dish-info"><div class="dish-no">03 / FIRE</div><div class="dish-name">Ember-roasted côte</div><div class="dish-desc">Charred allium · jus · garden leaves</div></div></article>
+</div>
+</section>
+
+<section class="experience reveal" id="experience">
+<div class="exp-grid"><div class="exp-image"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=88" alt="Elegant restaurant dining room"></div>
+<div class="exp-copy"><div class="eyebrow" style="color:#746b5f">04 / THE EXPERIENCE</div><h2>Stay<br><em>awhile.</em></h2><p>From the first pour to the last course, everything is paced for conversation. Come early for a drink at the bar, settle in for dinner, or let the chef's table take the evening somewhere unexpected.</p><div class="exp-list"><div class="exp-item"><span>01</span><span>DINNER SERVICE</span><span>5:30 — 11:00</span></div><div class="exp-item"><span>02</span><span>BAR & APERITIVO</span><span>4:30 — LATE</span></div><div class="exp-item"><span>03</span><span>CHEF'S TABLE</span><span>BY REQUEST</span></div></div></div></div>
+</section>
+
+<section class="reserve reveal" id="reserve">
+<div class="reserve-bg"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2200&q=88" alt="Candlelit restaurant table"></div>
+<div class="reserve-content"><div class="eyebrow">05 / RESERVATIONS</div><h2>Your table<br><em>is waiting.</em></h2><p>Choose an evening and tell us how we can make it special. This is a fictional portfolio concept; reservation actions open an enquiry email.</p><a class="btn primary" href="mailto:virexahartwell@gmail.com?subject=EMBER%20HOUSE%20%E2%80%94%20Reservation%20Enquiry&body=Hi%20Virexa%20%26%20Hartwell%2C%0A%0AI%27d%20like%20to%20discuss%20the%20EMBER%20HOUSE%20restaurant%20concept.">Request a table <span>↗</span></a></div>
+</section>
+
+<section class="journal reveal" id="journal">
+<div class="section-top"><div><div class="eyebrow">06 / FROM THE JOURNAL</div><h2>Notes from<br><em>the kitchen.</em></h2></div></div>
+<div class="journal-row"><span class="journal-no">01</span><span class="journal-title">Why fire changes everything.</span><span class="journal-desc">Heat, smoke and the patience behind the plate.</span><span class="journal-arrow">↗</span></div>
+<div class="journal-row"><span class="journal-no">02</span><span class="journal-title">The case for eating seasonally.</span><span class="journal-desc">A menu that moves with the market.</span><span class="journal-arrow">↗</span></div>
+<div class="journal-row"><span class="journal-no">03</span><span class="journal-title">A good room makes dinner longer.</span><span class="journal-desc">Light, sound and the architecture of hospitality.</span><span class="journal-arrow">↗</span></div>
+</section>
+
+<section class="final reveal">
+<div><div class="eyebrow">07 / COME IN</div><h2>Make an<br><em>evening of it.</em></h2><p>For private dining, celebrations, partnerships or a simple table for two — start with a conversation.</p><a class="btn" href="mailto:virexahartwell@gmail.com?subject=EMBER%20HOUSE%20%E2%80%94%20Project%20Enquiry&body=Hi%20Virexa%20%26%20Hartwell%2C%0A%0AI%27d%20like%20to%20discuss%20the%20EMBER%20HOUSE%20concept.">Start a conversation <span>↗</span></a></div>
+</section>
+</main>
+
+<footer>
+<div class="foot-grid"><div><div class="foot-logo">EMBER HOUSE</div><div class="foot-note">FICTIONAL US HOSPITALITY CONCEPT · BY VIREXA & HARTWELL<br><br>Concept menu, service times and imagery are for portfolio presentation only.</div></div>
+<div><h4>Explore</h4><a href="#menu">Menu</a><a href="#experience">The house</a><a href="#journal">Journal</a></div>
+<div><h4>Reservations</h4><a href="#reserve">Request a table</a><a href="mailto:virexahartwell@gmail.com?subject=EMBER%20HOUSE%20%E2%80%94%20Reservation%20Enquiry">Email enquiry</a></div>
+<div><h4>Visit</h4><a href="#reserve">New York</a><a href="#reserve">Los Angeles</a><a href="#reserve">Austin</a></div></div>
+<div class="foot-bottom"><span>© 2026 EMBER HOUSE — CONCEPT</span><span>DESIGNED & DEVELOPED BY VIREXA & HARTWELL</span></div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -7% 0px'});
+document.querySelectorAll('.reveal').forEach((e,i)=>{e.style.transitionDelay=(i%3)*70+'ms';io.observe(e)});
+const hero=document.querySelector('.hero img');
+let tick=false;
+addEventListener('scroll',()=>{if(tick)return;tick=true;requestAnimationFrame(()=>{const r=document.querySelector('.hero').getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){hero.style.transform=`translate3d(0,${(r.top-innerHeight*.5)*-.035}px,0) scale(1.02)`}tick=false})},{passive:true});
+document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.03}px,${(e.clientY-r.top-r.height/2)*.03}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+
+const entry=document.getElementById('entry');
+const enterHouse=document.getElementById('enterHouse');
+const enterKey=()=>{if(entry.classList.contains('open'))return; entry.classList.add('open'); document.body.classList.add('entered'); setTimeout(()=>{entry.remove();document.body.style.overflow='';},2550)};
+enterHouse.addEventListener('click',enterKey);
+enterHouse.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')enterKey()});
+</script>
+</body>
+</html>
